@@ -3,8 +3,8 @@ package com.postnov.android.translate.data.source.study;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.postnov.android.translate.data.source.study.tables.StatisticsTable;
-import com.postnov.android.translate.data.source.study.tables.WordsTable;
+import com.postnov.android.translate.data.source.study.table.StatisticsTable;
+import com.postnov.android.translate.data.source.study.table.WordsTable;
 
 /**
  * Created by platon on 24.07.2016.

@@ -1,7 +1,7 @@
 package com.postnov.android.translate.data.source.translate;
 
 import com.postnov.android.translate.api.DictionaryApi;
-import com.postnov.android.translate.data.entity.Response;
+import com.postnov.android.translate.data.source.translate.entity.Response;
 
 import java.util.Map;
 

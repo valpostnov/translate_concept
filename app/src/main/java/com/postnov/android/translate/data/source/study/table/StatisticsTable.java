@@ -1,4 +1,4 @@
-package com.postnov.android.translate.data.source.study.tables;
+package com.postnov.android.translate.data.source.study.table;
 
 import com.pushtorefresh.storio.sqlite.queries.Query;
 

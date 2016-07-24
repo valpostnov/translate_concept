@@ -2,12 +2,11 @@ package com.postnov.android.translate.data.source.study;
 
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.postnov.android.translate.data.source.study.entities.Statistics;
-import com.postnov.android.translate.data.source.study.entities.StatisticsSQLiteTypeMapping;
-import com.postnov.android.translate.data.source.study.entities.Word;
-import com.postnov.android.translate.data.source.study.IStudyDataSource;
-import com.postnov.android.translate.data.source.study.entities.WordSQLiteTypeMapping;
-import com.postnov.android.translate.data.source.study.tables.WordsTable;
+import com.postnov.android.translate.data.source.study.entity.Statistics;
+import com.postnov.android.translate.data.source.study.entity.StatisticsSQLiteTypeMapping;
+import com.postnov.android.translate.data.source.study.entity.Word;
+import com.postnov.android.translate.data.source.study.entity.WordSQLiteTypeMapping;
+import com.postnov.android.translate.data.source.study.table.WordsTable;
 import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import com.pushtorefresh.storio.sqlite.impl.DefaultStorIOSQLite;
 import com.pushtorefresh.storio.sqlite.operations.delete.DeleteResult;
@@ -16,8 +15,6 @@ import com.pushtorefresh.storio.sqlite.operations.put.PutResult;
 import java.util.List;
 
 import rx.Observable;
-import rx.Observer;
-import rx.functions.Func1;
 
 /**
  * Created by platon on 24.07.2016.

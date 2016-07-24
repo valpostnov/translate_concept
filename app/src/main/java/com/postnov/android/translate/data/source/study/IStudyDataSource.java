@@ -1,7 +1,7 @@
 package com.postnov.android.translate.data.source.study;
 
-import com.postnov.android.translate.data.source.study.entities.Statistics;
-import com.postnov.android.translate.data.source.study.entities.Word;
+import com.postnov.android.translate.data.source.study.entity.Statistics;
+import com.postnov.android.translate.data.source.study.entity.Word;
 import com.pushtorefresh.storio.sqlite.operations.delete.DeleteResult;
 import com.pushtorefresh.storio.sqlite.operations.put.PutResult;
 

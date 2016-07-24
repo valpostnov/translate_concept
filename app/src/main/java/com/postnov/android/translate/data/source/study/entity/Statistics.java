@@ -1,9 +1,9 @@
-package com.postnov.android.translate.data.source.study.entities;
+package com.postnov.android.translate.data.source.study.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.postnov.android.translate.data.source.study.tables.StatisticsTable;
+import com.postnov.android.translate.data.source.study.table.StatisticsTable;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType;
 
