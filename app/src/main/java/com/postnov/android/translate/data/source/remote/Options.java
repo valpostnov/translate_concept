@@ -1,5 +1,7 @@
 package com.postnov.android.translate.data.source.remote;
 
+import com.postnov.android.translate.BuildConfig;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +19,7 @@ public final class Options {
     }
 
     private String getKey() {
-        return null;
+        return BuildConfig.dictionary_key;
     }
 
     public static Map<String, String> create(String lang, String text) {

@@ -1,7 +1,9 @@
-package com.postnov.android.translate;
+package com.postnov.android.translate.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.postnov.android.translate.R;
 
 public class MainActivity extends AppCompatActivity {
 
