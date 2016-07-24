@@ -1,4 +1,4 @@
-package com.postnov.android.translate.data.entity;
+package com.postnov.android.translate.data.source.study.entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;

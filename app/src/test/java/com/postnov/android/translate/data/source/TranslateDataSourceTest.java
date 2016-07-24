@@ -1,8 +1,9 @@
 package com.postnov.android.translate.data.source;
 
 import com.postnov.android.translate.data.entity.Response;
-import com.postnov.android.translate.data.source.remote.Options;
-import com.postnov.android.translate.data.source.remote.RemoteDataSource;
+import com.postnov.android.translate.data.source.translate.Options;
+import com.postnov.android.translate.data.source.translate.ITranslateDataSource;
+import com.postnov.android.translate.data.source.translate.TranslateDataSourceImpl;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -14,13 +15,13 @@ import rx.observers.TestSubscriber;
 /**
  * Created by platon on 24.07.2016.
  */
-public class RemoteDataSourceTest {
-    private IDataSource remoteSource;
+public class TranslateDataSourceTest {
+    private ITranslateDataSource remoteSource;
     private Map<String, String> options;
 
     @Before
     public void init() {
-        remoteSource = new RemoteDataSource();
+        remoteSource = new TranslateDataSourceImpl();
         options = Options.create("ru-en", "Россия");
     }
 

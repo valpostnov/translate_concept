@@ -1,4 +1,4 @@
-package com.postnov.android.translate.data.source.remote;
+package com.postnov.android.translate.data.source.translate;
 
 import com.postnov.android.translate.BuildConfig;
 

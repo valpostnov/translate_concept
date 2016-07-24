@@ -1,8 +1,7 @@
-package com.postnov.android.translate.data.source.remote;
+package com.postnov.android.translate.data.source.translate;
 
 import com.postnov.android.translate.api.DictionaryApi;
 import com.postnov.android.translate.data.entity.Response;
-import com.postnov.android.translate.data.source.IDataSource;
 
 import java.util.Map;
 
@@ -14,11 +13,12 @@ import rx.Observable;
 /**
  * Created by platon on 24.07.2016.
  */
-public class RemoteDataSource implements IDataSource {
+public class TranslateDataSourceImpl implements ITranslateDataSource {
+
     private static final String ENDPOINT = "https://dictionary.yandex.net/api/v1/dicservice.json/";
     private DictionaryApi api;
 
-    public RemoteDataSource() {
+    public TranslateDataSourceImpl() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create())
