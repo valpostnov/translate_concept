@@ -15,10 +15,6 @@ public class WordsTable {
     public static final String COLUMN_CORRECT_ANSWERS = "correct_answers";
     public static final String COLUMN_INCORRECT_ANSWERS = "incorrect_answers";
 
-    public static final Query QUERY_ALL = Query.builder()
-            .table(TABLE_NAME)
-            .build();
-
     private WordsTable() {
         throw new IllegalStateException("No instances please");
     }

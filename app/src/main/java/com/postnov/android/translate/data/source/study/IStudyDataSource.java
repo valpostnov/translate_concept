@@ -14,13 +14,25 @@ import rx.Observable;
  */
 public interface IStudyDataSource {
 
-    Observable<List<Word>> getWords(int count);
+    Observable<List<Word>> getWords();
+
+    Observable<List<Word>> getWords(String category);
+
+    Observable<List<Word>> getUnstudiedWords(int iterations);
+
     Observable<Statistics> getDayStatistics(String date);
-    Observable<List<Statistics>> getSomeDaysStatistics(int count);
+
+    Observable<List<Statistics>> getWeekStatistics();
 
     Observable<PutResult> saveWord(Word word);
-    Observable<DeleteResult> deleteWord(String word);
+
+    Observable<DeleteResult> deleteWord(Word word);
+
+    Observable<DeleteResult> deleteAll();
+
     Observable<PutResult> updateWord(Word word);
+
     Observable<PutResult> saveDayStatistics(Statistics statistics);
+
     Observable<DeleteResult> deleteDayStatistics(Statistics statistics);
 }

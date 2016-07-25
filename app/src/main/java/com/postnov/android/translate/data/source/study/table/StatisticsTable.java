@@ -14,10 +14,6 @@ public class StatisticsTable {
     public static final String COLUMN_UNSTUDIED_WORDS = "unstudied_words";
     public static final String COLUMN_SUCCESS_TASKS = "success_tasks";
 
-    public static final Query QUERY_ALL = Query.builder()
-            .table(TABLE_NAME)
-            .build();
-
     private StatisticsTable() {
         throw new IllegalStateException("No instances please");
     }

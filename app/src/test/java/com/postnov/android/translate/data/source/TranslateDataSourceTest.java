@@ -3,7 +3,7 @@ package com.postnov.android.translate.data.source;
 import com.postnov.android.translate.data.source.translate.entity.Response;
 import com.postnov.android.translate.data.source.translate.Options;
 import com.postnov.android.translate.data.source.translate.ITranslateDataSource;
-import com.postnov.android.translate.data.source.translate.TranslateDataSourceImpl;
+import com.postnov.android.translate.data.source.translate.TranslateRemoteDataSource;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +21,7 @@ public class TranslateDataSourceTest {
 
     @Before
     public void init() {
-        remoteSource = new TranslateDataSourceImpl();
+        remoteSource = new TranslateRemoteDataSource();
         options = Options.create("ru-en", "Россия");
     }
 

@@ -13,12 +13,12 @@ import rx.Observable;
 /**
  * Created by platon on 24.07.2016.
  */
-public class TranslateDataSourceImpl implements ITranslateDataSource {
+public class TranslateRemoteDataSource implements ITranslateDataSource {
 
     private static final String ENDPOINT = "https://dictionary.yandex.net/api/v1/dicservice.json/";
     private DictionaryApi api;
 
-    public TranslateDataSourceImpl() {
+    public TranslateRemoteDataSource() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create())

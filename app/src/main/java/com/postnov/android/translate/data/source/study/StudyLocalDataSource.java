@@ -6,11 +6,15 @@ import com.postnov.android.translate.data.source.study.entity.Statistics;
 import com.postnov.android.translate.data.source.study.entity.StatisticsSQLiteTypeMapping;
 import com.postnov.android.translate.data.source.study.entity.Word;
 import com.postnov.android.translate.data.source.study.entity.WordSQLiteTypeMapping;
+import com.postnov.android.translate.data.source.study.query.StatisticsQuery;
+import com.postnov.android.translate.data.source.study.query.WordsQuery;
+import com.postnov.android.translate.data.source.study.table.StatisticsTable;
 import com.postnov.android.translate.data.source.study.table.WordsTable;
 import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import com.pushtorefresh.storio.sqlite.impl.DefaultStorIOSQLite;
 import com.pushtorefresh.storio.sqlite.operations.delete.DeleteResult;
 import com.pushtorefresh.storio.sqlite.operations.put.PutResult;
+import com.pushtorefresh.storio.sqlite.queries.DeleteQuery;
 
 import java.util.List;
 
@@ -43,30 +47,53 @@ public class StudyLocalDataSource implements IStudyDataSource {
     }
 
     @Override
-    public Observable<List<Word>> getWords(int count) {
+    public Observable<List<Word>> getWords() {
 
         return storIOSQLite.get()
                 .listOfObjects(Word.class)
-                .withQuery(WordsTable.QUERY_ALL)
+                .withQuery(WordsQuery.queryAll())
                 .prepare()
-                .asRxObservable()
-                .limit(count);
+                .asRxObservable();
+    }
+
+    @Override
+    public Observable<List<Word>> getWords(String category) {
+
+        return storIOSQLite.get()
+                .listOfObjects(Word.class)
+                .withQuery(WordsQuery.queryCategory(category))
+                .prepare()
+                .asRxObservable();
+    }
+
+    @Override
+    public Observable<List<Word>> getUnstudiedWords(int iterations) {
+
+        return storIOSQLite.get()
+                .listOfObjects(Word.class)
+                .withQuery(WordsQuery.queryUnstudied(iterations))
+                .prepare()
+                .asRxObservable();
     }
 
     @Override
     public Observable<Statistics> getDayStatistics(String date) {
-        return null;
+
+        return storIOSQLite.get()
+                .object(Statistics.class)
+                .withQuery(StatisticsQuery.queryConcreteDay(date))
+                .prepare()
+                .asRxObservable();
     }
 
     @Override
-    public Observable<List<Statistics>> getSomeDaysStatistics(int count) {
+    public Observable<List<Statistics>> getWeekStatistics() {
 
         return storIOSQLite.get()
                 .listOfObjects(Statistics.class)
-                .withQuery(WordsTable.QUERY_ALL)
+                .withQuery(StatisticsQuery.queryThisWeek())
                 .prepare()
-                .asRxObservable()
-                .limit(count);
+                .asRxObservable();
     }
 
     @Override
@@ -79,12 +106,18 @@ public class StudyLocalDataSource implements IStudyDataSource {
     }
 
     @Override
-    public Observable<DeleteResult> deleteWord(String word) {
+    public Observable<DeleteResult> deleteWord(Word word) {
 
         return storIOSQLite.delete()
                 .object(word)
                 .prepare()
                 .asRxObservable();
+    }
+
+    @Override
+    public Observable<DeleteResult> deleteAll() {
+
+        return null;
     }
 
     @Override
