@@ -8,12 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.postnov.android.translate.R;
-import com.postnov.android.translate.data.source.study.entity.GlobalStatistics;
 import com.postnov.android.translate.data.source.study.entity.Profile;
-import com.postnov.android.translate.data.source.study.entity.Statistics;
 import com.postnov.android.translate.profile.interfaces.ProfileView;
-
-import java.util.List;
 
 public class ProfileFragment extends Fragment implements ProfileView {
 
@@ -25,12 +21,7 @@ public class ProfileFragment extends Fragment implements ProfileView {
     }
 
     @Override
-    public void showStatistics(GlobalStatistics statistics) {
-
-    }
-
-    @Override
-    public void showProfileInfo(Profile profile) {
+    public void showProfile(Profile profile) {
 
     }
 

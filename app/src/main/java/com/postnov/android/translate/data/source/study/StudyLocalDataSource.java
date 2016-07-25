@@ -8,13 +8,10 @@ import com.postnov.android.translate.data.source.study.entity.Word;
 import com.postnov.android.translate.data.source.study.entity.WordSQLiteTypeMapping;
 import com.postnov.android.translate.data.source.study.query.StatisticsQuery;
 import com.postnov.android.translate.data.source.study.query.WordsQuery;
-import com.postnov.android.translate.data.source.study.table.StatisticsTable;
-import com.postnov.android.translate.data.source.study.table.WordsTable;
 import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import com.pushtorefresh.storio.sqlite.impl.DefaultStorIOSQLite;
 import com.pushtorefresh.storio.sqlite.operations.delete.DeleteResult;
 import com.pushtorefresh.storio.sqlite.operations.put.PutResult;
-import com.pushtorefresh.storio.sqlite.queries.DeleteQuery;
 
 import java.util.List;
 

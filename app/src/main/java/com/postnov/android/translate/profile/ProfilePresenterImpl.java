@@ -1,19 +1,13 @@
 package com.postnov.android.translate.profile;
 
 import com.postnov.android.translate.data.source.study.IStudyDataSource;
-import com.postnov.android.translate.data.source.study.entity.GlobalStatistics;
-import com.postnov.android.translate.data.source.study.entity.Statistics;
-import com.postnov.android.translate.data.source.study.entity.Word;
+import com.postnov.android.translate.data.source.study.entity.Profile;
 import com.postnov.android.translate.profile.interfaces.ProfilePresenter;
 import com.postnov.android.translate.profile.interfaces.ProfileView;
 
-import java.util.List;
-
 import rx.Observable;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
-import rx.functions.Func2;
 import rx.subscriptions.CompositeSubscription;
 
 /**
@@ -36,7 +30,7 @@ public class ProfilePresenterImpl implements ProfilePresenter {
         profileView.showProgress(true);
         subscriptions.add(
                 Observable.zip(dataSource.getWeekStatistics(), dataSource.getUnstudiedWords(iterations),
-                (statistics, words) -> new GlobalStatistics(statistics, words.size()))
+                (statistics, words) -> new Profile(null, statistics, words.size()))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(onNext, onError)
         );
@@ -57,9 +51,9 @@ public class ProfilePresenterImpl implements ProfilePresenter {
         subscriptions.clear();
     }
 
-    private Action1<GlobalStatistics> onNext = statistics -> {
+    private Action1<Profile> onNext = profile -> {
         profileView.showProgress(false);
-        profileView.showStatistics(statistics);
+        profileView.showProfile(profile);
     };
 
     private Action1<Throwable> onError = e -> {
