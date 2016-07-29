@@ -1,1 +1,2 @@
-# translate_concept
+# translate concept
+Новый функционал приложения Яндекс.Переводчик
